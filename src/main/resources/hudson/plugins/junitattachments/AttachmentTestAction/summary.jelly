@@ -1,0 +1,30 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define"
+	xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+
+	<tr><td>
+	<h3>${%Attachments}</h3>
+	<table class="pane" id="attachments">
+		<tr>
+			<td class="pane-header">${%Files}</td>
+		</tr>
+			<j:forEach var="attachment" items="${it.attachments}">
+				<tr>
+					<td class="pane">
+						<a class="${it.isImageFile(attachment) ? 'gallery' : ''}"
+						   title="${attachment}"
+						   href="attachments/${attachment}">${attachment}</a>
+					</td>
+				</tr>
+			</j:forEach>
+	</table>
+	</td></tr>
+
+    <st:adjunct includes="hudson.plugins.jquery.colorbox" />
+    <script type="text/javascript">
+        Q(document).ready(function() {
+            var open = ${it.hasSingleImageAttachment};
+            Q("a.gallery").colorbox({rel: "gallery", maxWidth: "95%", maxHeight: "95%", speed: 150, open: open});
+        });
+    </script>
+
+</j:jelly>
