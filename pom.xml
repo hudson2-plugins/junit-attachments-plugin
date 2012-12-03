@@ -9,7 +9,7 @@
 
     <groupId>org.hudsonci.plugins</groupId>
     <artifactId>junit-attachments</artifactId>
-    <version>1.4</version>
+    <version>1.5-SNAPSHOT</version>
     <packaging>hpi</packaging>
     <name>JUnit Attachments Plugin</name>
     <url>http://wiki.hudson-ci.org/display/HUDSON/JUnit+Attachments+Plugin</url>
